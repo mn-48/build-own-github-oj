@@ -22,7 +22,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python test.py
+          python test.py < test.in > test.out
           if [ $? -ne 0 ]; then
             echo "This test case does not pass"
             exit 1
