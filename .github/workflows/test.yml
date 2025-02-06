@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -18,4 +21,9 @@ jobs:
           python-version: '3.x'
 
       - name: Run Python script
-        run: python test.py
+        run: |
+          python test.py
+          if [ $? -ne 0 ]; then
+            echo "This test case does not pass"
+            exit 1
+          fi
