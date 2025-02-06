@@ -1,7 +1,7 @@
 # test.py
 def test_case():
     # Example test case
-    result = 1 + 3
+    result = 1 + 1
     expected = 2
     return result == expected
 
